@@ -3,6 +3,7 @@
 	const $tab = $doc.getElementById('js-tab');
 	const $nav = $tab.querySelectorAll('[data-nav]');
 	const $content = $tab.querySelectorAll('[data-content]');
+	const ACTIVE = 'is-active'
 
 	//初期化
 	const init = () => {
@@ -21,13 +22,13 @@
 		let index = 0;
 		while(index < $nav.length){
 			$content[index].style.display = 'none';
-			$nav[index].classList.remove('is-active');
+			$nav[index].classList.remove(ACTIVE);
 			index ++;
 		}
 
 		// 対象のコンテンツをアクティブ化
 		$tab.querySelectorAll('[data-content="' + targetVal + '"]')[0].style.display = "block";
-		$nav[targetVal].classList.add('is-active');
+		$nav[targetVal].classList.add(ACTIVE);
 	};
 
 	// 全navに対応
